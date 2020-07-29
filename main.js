@@ -1,6 +1,9 @@
-        $('#div2').draggable({
+$(document).ready(function() {
+		
+		$('#div2').draggable({
             refreshPositions: true
         });
+		
 
         function collision($div1, $div2) {
             var x1 = $div1.offset().left;
@@ -20,8 +23,29 @@
         }
 
         setInterval(() => {
-            var state =document.getElementById('state');
-            if (collision($('#div1'),$('#div2')))
-                state.innerText="Touching !!!"
-            else state.innerText="No collision"
+            if (collision($('#div1'),$('#div2'))) { 
+				var interval = null;
+				var div1poz = $("#div1").offset();
+				var div2poz = $("#div2").offset();
+				
+				var div1height = $("#div1").height();
+				var div2height = $("#div2").height();
+				var div1width = $("#div1").width();
+				var div2width = $("#div2").width();	
+
+				var difh = (div1height - div2height)/2;
+				var difw = (div1width - div2width)/2;
+				
+				$('#div2').draggable("disable");				
+				clearInterval(interval);	
+				var susdiv1 = div1poz.top + difh;
+				var stgdiv1 = div1poz.left + difw;
+
+				$("#div2").offset({top: susdiv1, left: stgdiv1})	
+			}
+            else {
+//				$('#div1').text("?")
+			}
         },50);
+
+});
