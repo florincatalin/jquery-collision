@@ -5,11 +5,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <style>
+              #div2{
+            width: 200px;
+            height: 50px;
+            position: relative;
+            left: 250px;
+            background: #bfffbf;
+            color: #000000;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #div1{
+            width: 220px;
+            height: 60px;
+            position: relative;
+            background: #3498DB;
+            color: #fff;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 30px;
+        }
+h1 { 
+color: #fff; 
+}
+
+.repozitionare {
+position: relative;
+top: 10px;
+left: 10px;
+}
+    </style>
 </head>
 <body>
-    <div id="div1"></div>
-    <div id="div2">Drag me</div>
+  <div class="container">
+    <h1>jQuery Collision Plugin Example</h1>
+    <div id="div1">Locație</div>
+    <div id="div2">Etichetă</div>
     <div id="state"></div>
-    <script src="main.js"></script>
+  </div>
+    <script src="main_center.js"></script>
+
 </body>
 </html>
+
